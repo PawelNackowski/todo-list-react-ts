@@ -7,7 +7,7 @@ import styled, { css } from "styled-components";
     list-style: none;
   `;
 
-  export const Item = styled.li`
+  export const Item = styled.li<{ hiden?: boolean }>`
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-gap: 10px;
@@ -20,13 +20,13 @@ import styled, { css } from "styled-components";
     `}
   `;
 
-  export const Content = styled.span`
+  export const Content = styled.span<{done?: boolean }>`
     ${({ done }) => done && css`
     text-decoration: line-through;
     `}
   `;
 
-  export const Button = styled.button`
+  export const Button = styled.button<{ toggleDone?: boolean, remove?: boolean }>`
     width: 30px;
     height: 30px;
     font-size: 20px;
