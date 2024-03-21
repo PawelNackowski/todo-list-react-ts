@@ -8,7 +8,6 @@ import { toAuthor, toTask, toTasks } from "./routes";
 const App = () => (
   <HashRouter>
     <Navigation />
-
     <Switch>
       <Route path={toTask()}>
         <TaskPages />

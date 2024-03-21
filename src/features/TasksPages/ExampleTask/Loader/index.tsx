@@ -3,7 +3,10 @@ import { Spiner } from "./styled";
 
 const Loader = () => {
   return (
-    <Wrapper><Spiner />Ładowanie</Wrapper>
+    <Wrapper>
+      <Spiner />
+      Ładowanie
+    </Wrapper>
   )
 };
 
