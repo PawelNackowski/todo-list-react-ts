@@ -3,7 +3,7 @@ It's a simple task-list. You can write task on blank and mark you're task if is 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Demo
 
-[Website link](https://pawelnackowski.github.io/todo-list-react/)
+<!-- [Website link](https://pawelnackowski.github.io/todo-list-react/) -->
 ![Demo.gif](demo.gif) 
 
 ## Technologies used
