@@ -12,4 +12,4 @@ export const theme = {
   breakpoint: {
     mobile: 767,
   },
-};
+} as const;
