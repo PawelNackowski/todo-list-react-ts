@@ -5,11 +5,12 @@ import Footer from "../../../../common/Footer";
 import Header from "../../../../common/Header";
 import Section from "../../../../common/Section";
 import { Container } from "../../../../styled";
+import { Task } from "../../../../types";
 
 
 const TaskPages = () => {
-  const { id } = useParams();
-  const task = useSelector(state => getTaskById(state, id));
+  const { id } = useParams<{ id: string }>();
+  const task: Task = useSelector(state => getTaskById(state, id));
 
   return (
     <Container>

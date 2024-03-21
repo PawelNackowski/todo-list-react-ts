@@ -1,14 +1,14 @@
 import { useHistory, useLocation } from "react-router-dom";
-import { Input } from "../Tasks/Input/styled"
+import { Input } from "../Tasks/Input/styled";
 import searchQueryParamName from "../searchQueryParamName";
 import { Wrapper } from "./styled";
 
 const Search = () => {
-  const location = useLocation();
   const history = useHistory();
-  const query = (new URLSearchParams(location.search)).get(searchQueryParamName);
+  const location = useLocation();
 
-  const onInputChange = ({ target }) => {
+  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { target } = event;
     const searchParams = new URLSearchParams(location.search);
 
     if (target.value.trim() === "") {
@@ -19,6 +19,9 @@ const Search = () => {
 
     history.push(`${location.pathname}?${searchParams.toString()}`);
   };
+
+  const query = new URLSearchParams(location.search).get(searchQueryParamName);
+
   return (
     <Wrapper>
       <Input
@@ -27,7 +30,7 @@ const Search = () => {
         onChange={onInputChange}
       />
     </Wrapper>
-  )
+  );
 };
 
 export default Search;
