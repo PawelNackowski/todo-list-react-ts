@@ -6,18 +6,19 @@ import Header from "../../../../common/Header";
 import Section from "../../../../common/Section";
 import { Container } from "../../../../styled";
 import { Task } from "../../../../types";
+import { RootState } from "../../../../store";
 
 
 const TaskPages = () => {
   const { id } = useParams<{ id: string }>();
-  const task: Task = useSelector(state => getTaskById(state, id));
+  const task = useSelector((state: RootState) => getTaskById(state, id));
 
   return (
     <Container>
       <Header title="Szczegóły zadania" />
       <Section
         title={task ? task.content : "Nie znaleziono zadania"}
-        body={!!task && (
+        body={task && (
           <>
             <strong>Ukończono:</strong>
             {task.done ? "Tak" : "Nie"}
@@ -27,6 +28,4 @@ const TaskPages = () => {
       <Footer />
     </Container>
   )
-}
-
-export default TaskPages;
+        };

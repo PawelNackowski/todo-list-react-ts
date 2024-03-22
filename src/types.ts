@@ -1,8 +1,8 @@
-import { ReactElement, ReactNode } from "react";
+import {ReactElement, ReactNode } from "react";
 
 export interface Task {
     id: string;
-    content: ReactNode;
+    content: string;
     done: ReactNode;
 }
 

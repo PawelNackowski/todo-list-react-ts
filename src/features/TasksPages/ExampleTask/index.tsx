@@ -2,11 +2,12 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchExampleTasks, selectLoading } from "../Tasks/tasksSlice";
 import { Button, Wrapper } from "../Buttons/styled"
 import Loader from "./Loader";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
 
 
 const ExampleTask = () => {
-  const dispatch = useDispatch();
-  const loading = useSelector(selectLoading);
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector(selectLoading);
 
   return (
     <Wrapper>

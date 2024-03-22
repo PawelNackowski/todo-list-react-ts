@@ -1,15 +1,15 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useState, useRef, FormEventHandler } from "react"
-import { useDispatch } from "react-redux";
 import { StyledForm, Button } from "./styled";
 import { addTasks } from "../Tasks/tasksSlice";
 import { Input } from "../Tasks/Input/styled";
+import { useAppDispatch } from "../../../hooks";
 
 const Form = () => {
   const [newTaskContent, setNewTaskContent] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const focusInput = (inputRef: React.RefObject<HTMLInputElement>) => {
     inputRef.current!.focus();
