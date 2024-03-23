@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getTasksFromLocalStorage } from './tasksLocalStorage';
-import { RootState } from '../../../store';
-import { Task } from '../../../types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { getTasksFromLocalStorage } from "./tasksLocalStorage";
+import { RootState } from "../../../store";
+import { Task } from "../../types";
 
 interface TasksState {
   tasks: Task[];
@@ -16,7 +16,7 @@ const initialState: TasksState = {
 };
 
 export const tasksSlice = createSlice({
-  name: 'tasks',
+  name: "tasks",
   initialState,
   reducers: {
     addTasks: (state, action: PayloadAction<Task>) => {
@@ -62,9 +62,12 @@ export const {
 
 export const selectTasksState = (state: RootState) => state.tasks;
 export const selectTasks = (state: RootState) => selectTasksState(state).tasks;
-export const selectHideDone = (state: RootState) => selectTasksState(state).hideDone;
-export const selectLoading = (state: RootState) => selectTasksState(state).loading;
-export const selectAreEmptyTask = (state: RootState) => selectTasks(state).length === 0;
+export const selectHideDone = (state: RootState) =>
+  selectTasksState(state).hideDone;
+export const selectLoading = (state: RootState) =>
+  selectTasksState(state).loading;
+export const selectAreEmptyTask = (state: RootState) =>
+  selectTasks(state).length === 0;
 export const selectIsEveryTaskDone = (state: RootState) =>
   selectTasks(state).every(({ done }) => done);
 
@@ -74,7 +77,7 @@ export const getTaskById = (state: RootState, taskId: string) =>
 export const selectTaskByQuery = (state: RootState, query: string) => {
   const tasks = selectTasks(state);
 
-  if (!query || query.trim() === '') {
+  if (!query || query.trim() === "") {
     return tasks;
   }
 

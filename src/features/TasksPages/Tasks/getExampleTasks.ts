@@ -1,4 +1,3 @@
-
 export const getExampleTasks = async () => {
   const response = await fetch("/todo-list-react/exampleTasks.json");
 

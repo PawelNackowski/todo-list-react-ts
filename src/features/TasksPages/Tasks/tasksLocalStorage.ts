@@ -1,4 +1,4 @@
-import { Task } from "../../../types";
+import { Task } from "../../types";
 
 const localStorageKey = "tasks";
 
@@ -7,5 +7,5 @@ export const saveTasksInLocalStorege = (tasks: Task[]) =>
 
 export const getTasksFromLocalStorage = () => {
   const storedTasks = localStorage.getItem(localStorageKey);
-  return storedTasks ? JSON.parse(storedTasks) as Task[] : [];
+  return storedTasks ? (JSON.parse(storedTasks) as Task[]) : [];
 };

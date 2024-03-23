@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { List, Item, Content, Button, StyledLink } from "./styled";
 import { toggleTaskDone, removeTask, selectHideDone, selectTaskByQuery} from "../Tasks/tasksSlice";
 import { toTask } from "../../../routes";
-import { Task} from "../../../types";
+import { Task} from "../../types";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 
 const TaskList = () => {

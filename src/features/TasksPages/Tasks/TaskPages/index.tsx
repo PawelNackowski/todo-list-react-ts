@@ -5,7 +5,7 @@ import Footer from "../../../../common/Footer";
 import Header from "../../../../common/Header";
 import Section from "../../../../common/Section";
 import { Container } from "../../../../styled";
-import { Task } from "../../../../types";
+import { Task } from "../../../types";
 import { RootState } from "../../../../store";
 
 
